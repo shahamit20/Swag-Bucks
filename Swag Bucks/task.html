@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Swagbucks</title>
+    <link rel="stylesheet" href="styles/task.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <script src="scripts/task.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ======= Navigation Bar ======= -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">JoyWallet</div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Smile</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="redeem.html">Redeem</a></li>
+                <li><a href="blog.html">Blogs</a></li>
+                <li><a href="faq.html">FAQ's</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+            <div class="nav-icons">
+                <span class="coins">💰 <span id="total-coins">0</span> SB</span>
+                <span class="notifications">🔔</span>
+                <a href="account.html" class="account">👤</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ======= surveys Content ======= -->
+     <div class="task">
+    <div class="container">
+        <h2>Survey Questionnaire</h2>
+        <form action="submit.html" method="post">
+            <div class="radio">
+            <label>1. What factors influence your decision when purchasing a product online?</label><br>
+            <input type="checkbox" name="shopping_factors" value="price"> Price <br>
+            <input type="checkbox" name="shopping_factors" value="reviews"> Customer Reviews <br>
+            <input type="checkbox" name="shopping_factors" value="brand"> Brand Reputation <br>
+            <input type="checkbox" name="shopping_factors" value="ads"> Advertisements <br><br>
+            </div>
+            <label>2. What recent technology trend do you think will have the biggest impact in the next 5 years?</label><br>
+            <input type="text" name="tech_trend"><br><br>
+            
+            <label>3. Have you faced any major challenges in accessing healthcare services?</label><br>
+            <textarea name="healthcare_challenges" rows="3"></textarea><br><br>
+            
+            <label>4. Which gaming platform do you use the most?</label><br>
+            <select name="gaming_platform">
+                <option value="pc">PC</option>
+                <option value="console">Console</option>
+                <option value="mobile">Mobile</option>
+                <option value="cloud">Cloud Gaming</option>
+            </select><br><br>
+            
+            <label>5. What is your favorite video game and why?</label><br>
+            <textarea name="favorite_game" rows="3"></textarea><br><br>
+            
+            <div class="radio">
+                <label>6. How often do you try new restaurants?</label><br>
+            <input type="radio" name="new_restaurants" value="weekly"> Weekly <br>
+            <input type="radio" name="new_restaurants" value="monthly"> Monthly <br>
+            <input type="radio" name="new_restaurants" value="rarely"> Rarely <br>
+            <input type="radio" name="new_restaurants" value="never"> Never <br><br>
+            </div>
+            
+            <label>7. What is your favorite type of cuisine when dining out?</label><br>
+            <input type="text" name="favorite_cuisine"><br><br>
+            
+            <label>8. What is your most memorable travel experience?</label><br>
+            <textarea name="memorable_travel" rows="3"></textarea><br><br>
+            
+            <label>9. What is your biggest concern when planning a trip?</label><br>
+            <select name="travel_concern">
+                <option value="cost">Cost</option>
+                <option value="safety">Safety</option>
+                <option value="time">Time Constraints</option>
+                <option value="destination">Choosing the Right Destination</option>
+            </select><br><br>
+            
+            <div class="radio">
+                <label>10. How do you usually find travel recommendations?</label><br>
+            <input type="radio" name="travel_recommendations" value="friends"> Friends & Family <br>
+            <input type="radio" name="travel_recommendations" value="online_reviews"> Online Reviews <br>
+            <input type="radio" name="travel_recommendations" value="social_media"> Social Media Influencers <br>
+            <input type="radio" name="travel_recommendations" value="blogs"> Travel Blogs <br><br>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    </div>
+
+    <!-- ======= Footer ======= -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="account.html">Account</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Cookies Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="#">Customer Support</a></li>
+                    <li><a href="mailto:support@swagbucks.com">Email Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Subscribe to Our Newsletter</h4>
+                <form action="#" class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Social Media Links -->
+        <div class="social-media">
+            <ul class="social-links">
+                <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a></li>  
+            </ul>
+        </div>
+    
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>© 2025 Swagbucks. All rights reserved.</p>
+        </div>
+    </footer>
+    
+
+</body>
+</html>
