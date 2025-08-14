@@ -22,27 +22,37 @@ document.addEventListener("DOMContentLoaded", () => {
         addImageToSaveDiv(imageData);
     });
 
-    but.addEventListener("click", () => {
-        console.log("start")
-        document.querySelector(".camera-container").style.display = "block";
-        captureButton.style.display = "block";
-        closeButton.style.display = "block";
-        mediaDevices.getUserMedia({ video: true, audio: false })
-        Promise.all([
-            faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
-            faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
-            faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
-            faceapi.nets.faceExpressionNet.loadFromUri('/models'),
-            console.log("end")
-        ]).then(startVideo)
+   but.addEventListener("click", () => {
+    console.log("start");
+    document.querySelector(".camera-container").style.display = "block";
+    captureButton.style.display = "block";
+    closeButton.style.display = "block";
 
-        function startVideo() {
-            navigator.getUserMedia(
-                { video: {} },
-                stream => video.srcObject = stream,
-                err => console.error(err)
-            )
-        }
+    // Show camera feed
+    navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+        .then(stream => {
+            video.srcObject = stream;
+        })
+        .catch(err => console.error("Camera error:", err));
+
+    // Load face-api.js models
+    Promise.all([
+        faceapi.nets.tinyFaceDetector.loadFromUri('./models'),
+        faceapi.nets.faceLandmark68Net.loadFromUri('./models'),
+        faceapi.nets.faceRecognitionNet.loadFromUri('./models'),
+        faceapi.nets.faceExpressionNet.loadFromUri('./models')
+    ]).then(() => {
+        console.log("Models loaded successfully");
+        startVideo();
+    });
+
+    function startVideo() {
+        navigator.mediaDevices.getUserMedia({ video: {} })
+            .then(stream => {
+                video.srcObject = stream;
+            })
+            .catch(err => console.error(err));
+    }
 
         video.addEventListener('play', () => {
             const canvas = faceapi.createCanvasFromMedia(video);
